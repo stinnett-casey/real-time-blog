@@ -14,25 +14,25 @@
             <div class="form-row">
               <div class="md-form font-weight-light col-md-6 col-12">
                   <i class="fa fa-user-circle prefix grey-text"></i>
-                  <input type="text" id="materialFormFirstName" class="form-control">
-                  <label for="materialFormFirstName">First Name</label>
+                  <%= f.text_field :first_name, class: 'form-control' %>
+                  <%= f.label :first_name %>
               </div>
               <div class="md-form font-weight-light col-md-6 col-12">
                   <i class="fa fa-user-circle prefix grey-text d-sm-block d-md-none"></i>
-                  <input type="text" id="materialFormLastName" class="form-control">
-                  <label for="materialFormLastName">Last Name</label>
+                  <%= f.text_field :last_name, class: 'form-control' %>
+                  <%= f.label :last_name %>
               </div>
               <!-- Material input email -->
               <div class="md-form font-weight-light col-12">
                   <i class="fa fa-envelope prefix grey-text"></i>
-                  <input type="email" id="materialFormEmail" class="form-control">
-                  <label for="materialFormEmail">Your email</label>
+                  <%= f.email_field :email, class: 'form-control', id: 'email' %>
+                  <%= f.label :email, 'Your Email' %>
               </div>
               <!-- Material input password -->
               <div class="md-form font-weight-light col-12">
                   <i class="fa fa-lock prefix grey-text"></i>
-                  <input type="password" id="materialFormPassword" class="form-control">
-                  <label for="materialFormPassword">Your password</label>
+                  <%= f.password_field :password, class: 'form-control', id: 'password' %>
+                  <%= f.label :password, 'Your Password' %>
                   <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
                   <% end %><br />
