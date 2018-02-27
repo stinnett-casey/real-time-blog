@@ -14,7 +14,7 @@
           </div>
         </li>
       <% else %>
-        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-inline'}) do |f| %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-inline', id: 'sign-in-form'}) do |f| %>
           <div class="md-form mt-0">
             <div class="waves-input-wrapper waves-effect waves-light">
               <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'mr-sm-2 form-control', placeholder: 'Email' %>
@@ -83,8 +83,7 @@
         <!--Footer-->
         <div class="modal-footer">
           <div class="options font-weight-light">
-              <p>Not a member? <a href="#">Sign Up</a></p>
-              <p>Forgot <a href="#">Password?</a></p>
+              <p>Forgot <%= link_to "Password?", new_user_password_path %></p>
           </div>
         </div>
       </div>
