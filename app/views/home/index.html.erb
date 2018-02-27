@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg navbar-dark primary-color">
+  <%= link_to "Home", root_path, class: 'navbar-brand' %>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <% if user_signed_in? %>
+        <li class="ml-auto p-2 nav-item dropdown">
+          <%= link_to current_user.name, '#', class: 'nav-link dropdown-toggle', role: 'button', data: {toggle: 'dropdown'} %>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <%= link_to "Settings", edit_user_registration_path, class: 'dropdown-item' %>
+            <%= link_to "Profile", current_user, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: 'dropdown-item' %>
+          </div>
+        </li>
+      <% else %>
+        <%= form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'form-inline'}) do |f| %>
+          <div class="md-form mt-0">
+            <div class="waves-input-wrapper waves-effect waves-light">
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'mr-sm-2 form-control', placeholder: 'Email' %>
+            </div>
+          </div>
+
+          <div class="md-form mt-0">
+            <div class="waves-input-wrapper waves-effect waves-light">
+              <%= f.password_field :password, autocomplete: "off", class: 'mr-sm-2 form-control', placeholder: 'Password' %>
+            </div>
+          </div>
+
+          <% if devise_mapping.rememberable? -%>
+            <%= f.check_box :remember_me, class: 'mr-sm-2 form-control', checked: 'checked', style: 'display:none;' %>
+          <% end -%>
+          <button class="btn btn-outline-white btn-md my-2 my-sm-0 ml-3" type="submit">Log In</button>
+        <% end %>
+      <% end %>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-lg-6 offset-lg-3 col-md-8 offset-md-2 col-10 offset-1">
+      <div class="card mx-xl-5">
+        <div class="card-body">
+          <!--Header-->
+          <div class="form-header deep-blue-gradient rounded">
+              <h3><i class="fa fa-lock"></i>Sign Up</h3>
+          </div>
+          <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+            <%= devise_error_messages! %>
+            <div class="form-row">
+              <div class="md-form font-weight-light col-md-6 col-12">
+                  <i class="fa fa-user-circle prefix grey-text"></i>
+                  <input type="text" id="materialFormFirstName" class="form-control">
+                  <label for="materialFormFirstName">First Name</label>
+              </div>
+              <div class="md-form font-weight-light col-md-6 col-12">
+                  <i class="fa fa-user-circle prefix grey-text d-sm-block d-md-none"></i>
+                  <input type="text" id="materialFormLastName" class="form-control">
+                  <label for="materialFormLastName">Last Name</label>
+              </div>
+              <!-- Material input email -->
+              <div class="md-form font-weight-light col-12">
+                  <i class="fa fa-envelope prefix grey-text"></i>
+                  <input type="email" id="materialFormEmail" class="form-control">
+                  <label for="materialFormEmail">Your email</label>
+              </div>
+              <!-- Material input password -->
+              <div class="md-form font-weight-light col-12">
+                  <i class="fa fa-lock prefix grey-text"></i>
+                  <input type="password" id="materialFormPassword" class="form-control">
+                  <label for="materialFormPassword">Your password</label>
+                  <% if @minimum_password_length %>
+                    <em>(<%= @minimum_password_length %> characters minimum)</em>
+                  <% end %><br />
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <%= f.submit "Sign Up", class: 'btn btn-light-blue waves-effect waves-light' %>
+            </div>
+          <% end %>
+        </div>
+        <!--Footer-->
+        <div class="modal-footer">
+          <div class="options font-weight-light">
+              <p>Not a member? <a href="#">Sign Up</a></p>
+              <p>Forgot <a href="#">Password?</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
