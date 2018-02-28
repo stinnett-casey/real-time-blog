@@ -35,7 +35,12 @@
                   <%= f.label :password, 'Your Password' %>
                   <% if @minimum_password_length %>
                     <em>(<%= @minimum_password_length %> characters minimum)</em>
-                  <% end %><br />
+                  <% end %>
+              </div>
+              <div class="md-form font-weight-light col-12">
+                <i class="fa fa-lock prefix grey-text"></i>
+                <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+                <%= f.label :password_confirmation %>
               </div>
             </div>
             <div class="text-center mt-4">
