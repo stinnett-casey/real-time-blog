@@ -10,13 +10,25 @@
   </head>
 
   <body>
+    <%= render 'layouts/navbar' %>
     <% if flash[:notice] %>
       <p class="notice"><%= notice %></p>
     <% end %>
     <% if flash[:alert] %>
       <p class="alert"><%= alert %></p>
     <% end %>
-    <%= yield %>
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <div class="col-10">
+          <%= yield %>
+        </div>
+        <% if user_signed_in? %>
+          <div class="col-2">
+            Friends
+          </div>
+        <% end %>
+      </div>
+    </div>
     <%= javascript_include_tag 'mdb.min' %>
   </body>
 </html>

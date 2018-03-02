@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   resources :users, only: [:show]
+  resources :posts
   root "home#index"
 end
