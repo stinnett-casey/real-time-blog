@@ -1,0 +1,19 @@
+<div class="card mx-xl-5 mb-4">
+  <div class="card-body">
+    <!--Header-->
+    <div class="form-header deep-blue-gradient rounded">
+        <h3><i class="fa fa-pencil"></i>Post</h3>
+    </div>
+    <%= form_with model: Post.new, id: 'new-post-form' do |f| %>
+      <div class="form-row">
+        <div class="md-form font-weight-light col-12">
+            <%= f.text_area :content, class: 'form-control md-textarea' %>
+            <%= f.label :content %>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <%= f.submit "Post!", class: 'btn btn-light-blue waves-effect waves-light' %>
+      </div>
+    <% end %>
+  </div>
+</div>

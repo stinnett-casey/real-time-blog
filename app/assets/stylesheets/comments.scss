@@ -1,0 +1,23 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.comment {
+  .options {
+    width: 50px;
+    visibility: hidden;
+
+    i {
+      cursor: pointer;
+      color: gray;
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+  &:hover {
+    background: #f8f9fa;
+  }
+  &:hover .options {
+    visibility: visible;
+  }
+}

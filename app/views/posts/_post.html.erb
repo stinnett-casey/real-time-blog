@@ -1,0 +1,20 @@
+<div data-id="post-<%= post.id %>" class="post card card-cascade col-10 offset-1 mb-4 <%= 'new-post' if local_assigns[:new_post] %>">
+  <div class="view gradient-card-header blue-gradient">
+      <h2 class="h2-responsive"><%= post.user.full_name %></h2>
+      <p>
+        <i class="fa fa-clock-o pr-1"></i>
+        <%= timeago post.created_at %>
+      </p>
+  </div>
+  <div class="card-body text-center">
+    <p class="card-text"><%= post.content %></p>
+    <hr>
+    <a class="icons-sm tw-ic"><i class="fa fa-comments-o pr-1"></i><%= post.comments.count %></a>
+  </div>
+  <div class="comments-section">
+    <%= render 'comments/form', post: post %>
+    <div class="comments">
+      <%= render post.comments %>
+    </div>
+  </div>
+</div>

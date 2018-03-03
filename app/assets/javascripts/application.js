@@ -12,7 +12,12 @@
 //
 //= require jquery3
 //= require bootstrap.min
+//= require best_in_place
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
 //= require_tree .
+
+$(document).on('turbolinks:load', function(){
+  $(".best_in_place").best_in_place()
+});

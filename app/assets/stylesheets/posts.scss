@@ -1,0 +1,65 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.card {
+  .btn-floating {
+    i {
+      display: inline-block;
+      width: inherit;
+      text-align: center;
+      color: #fff;
+      font-size: 1.25rem;
+      line-height: 47px;
+    }
+  }
+
+  &.new-post {
+  }
+}
+
+.btn-floating {
+    width: 47px;
+    height: 47px;
+    position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    margin: 10px;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+}
+
+.btn-action {
+    margin-top: -23px;
+    margin-bottom: -23px;
+}
+
+.card.card-cascade .view.gradient-card-header {
+    padding: 0.3rem 1rem 0;
+    text-align: center;
+    color: #fff!important;
+}
+
+.card.card-cascade {
+  padding-top: 1rem;
+
+  .view {
+    border-radius: .25rem;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+  }
+}
+
+.view {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.blue-gradient {
+  background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+  background: linear-gradient(40deg,#45cafc,#303f9f)!important;
+}

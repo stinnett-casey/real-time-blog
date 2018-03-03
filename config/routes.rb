@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     passwords: 'users/passwords',
     registrations: 'users/registrations'
   }
+  resources :comments, only: [:index, :create, :update, :destroy]
   resources :users, only: [:show]
+  resources :posts
   root "home#index"
 end
