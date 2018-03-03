@@ -5,6 +5,7 @@ ruby '2.4.2'
 
 gem 'jquery-rails'
 gem 'devise'
+gem 'best_in_place'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0.rc1'
 # Use sqlite3 as the database for Active Record

@@ -1,5 +1,5 @@
 <%= render 'posts/form' %>
 
 <div class="posts row">
-  <%= render Post.all.reverse %>
+  <%= render Post.all.reverse, cached: true %>
 </div>

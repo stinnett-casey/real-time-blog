@@ -2,4 +2,8 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'turbolinks:load', ->
-  $('time.timeago').timeago()
+  $(document).on 'click', '.comment .fa-edit', ->
+    $(this).closest('.comment').find('.best_in_place').click()
+
+  $(document).on 'ajax:success', '.comment .destroy-comment-btn', ->
+    $(this).closest('.comment').remove()

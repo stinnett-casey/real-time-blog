@@ -1,0 +1,4 @@
+console.log("<%= @post_id %>");
+let $post = $(".post[data-id=post-<%= @post_id %>]");
+$post.find('.comments').append("<%= j render @comment %>");
+$post.find('.new-comment-form').trigger('reset');

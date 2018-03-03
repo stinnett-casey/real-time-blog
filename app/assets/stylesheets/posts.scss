@@ -12,6 +12,9 @@
       line-height: 47px;
     }
   }
+
+  &.new-post {
+  }
 }
 
 .btn-floating {
@@ -33,4 +36,30 @@
 .btn-action {
     margin-top: -23px;
     margin-bottom: -23px;
+}
+
+.card.card-cascade .view.gradient-card-header {
+    padding: 0.3rem 1rem 0;
+    text-align: center;
+    color: #fff!important;
+}
+
+.card.card-cascade {
+  padding-top: 1rem;
+
+  .view {
+    border-radius: .25rem;
+    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+  }
+}
+
+.view {
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+.blue-gradient {
+  background: -webkit-linear-gradient(50deg,#45cafc,#303f9f)!important;
+  background: linear-gradient(40deg,#45cafc,#303f9f)!important;
 }

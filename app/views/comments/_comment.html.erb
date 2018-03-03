@@ -1,0 +1,16 @@
+<div class="comment ">
+  <div class="user-content d-flex justify-content-between">
+    <div class="avatar rounded-circle">
+      <% if comment.user.avatar.attached? %>
+        <%= image_tag comment.user.avatar %>
+      <% end %>
+    </div>
+    <div class="d-inline-block"><%= best_in_place_if comment.user == current_user, comment, :content %></div>
+    <div class="ml-auto d-flex justify-content-between align-items-center options">
+      <i class="fa fa-edit"></i>
+      <%= link_to comment, method: :delete, remote: true, class: 'destroy-comment-btn' do %>
+        <i class="fa fa-trash"></i>
+      <% end %>
+    </div>
+  </div>
+</div>
