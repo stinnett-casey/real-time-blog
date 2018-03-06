@@ -1,7 +1,7 @@
 <div id="friend-list">
   <ul class="list-group">
-    <% current_user.friends.each do |friend| %>
-      <li class="list-goup-item"><%= friend.full_name %></li>
+    <% current_user.friendships.each do |friendship| %>
+      <li class="list-goup-item"><%= friendship.friend.full_name %></li>
     <% end %>
   </ul>
 </div>
