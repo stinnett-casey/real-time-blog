@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require jquery3
+//= require popper.min
+//= require tippy
 //= require bootstrap.min
 //= require best_in_place
 //= require rails-ujs

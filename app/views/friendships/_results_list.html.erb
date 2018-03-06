@@ -1,0 +1,8 @@
+<% if local_assigns[:people] %>
+  <ul class="list-group">
+    <% people.each do |person| %>
+      <% tooltip_html = %(<div class="person-tooltip"><div class="row"><div class="col-3">#{image_tag person.avatar, class: 'rounded-circle' if person.avatar.attached?}</div><div class="col-9"><div class="profile-link">#{link_to person.full_name, person}</div><div class="add-friend-link">#{button_to person.full_name, friendships_path, method: :post, params: { friendship: {friend_id: person.id} }, remote: true, form_class: 'friendship-request-form', class: 'btn btn-link'}</div></div></div></div>) %>
+      <li class="list-group-item tippy" title="<%= render html: tooltip_html %>"><%= person.full_name %></li>
+    <% end %>
+  </ul>
+<% end %>

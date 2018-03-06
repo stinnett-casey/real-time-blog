@@ -1,0 +1,17 @@
+<div class="person-tooltip">
+  <div class="row">
+    <div class="col-3">
+      <% if person.avatar.attached? %>
+        <%= image_tag person.avatar, class: 'rounded-circle' %>
+      <% end %>
+    </div>
+    <div class="col-9">
+      <div class="profile-link">
+        <%= link_to person.full_name, person %>
+      </div>  
+      <div class="add-friend-link">
+        <%= link_to "Add Friend", '/somewhere', remote: true %>
+      </div>
+    </div>
+  </div>
+</div>

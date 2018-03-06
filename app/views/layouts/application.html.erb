@@ -23,8 +23,15 @@
           <%= yield %>
         </div>
         <% if user_signed_in? %>
-          <div class="col-2">
-            Friends
+          <div class="col-2 card" id="friends" style="padding:0;">
+            <%= form_with url: friendship_search_path, class: 'form-inline md-form form-sm active-cyan-2' do |f| %>
+              <i class="fa fa-search" aria-hidden="true"></i>
+              <%= f.search_field :name, placeholder: 'Find A Friend', class: 'form-control form-control-sm', id: 'friends-search', autocomplete: 'off', style: 'width: 90%;' %>
+            <% end %>
+            <%= render 'friendships/friends_list' %>
+            <div id="search-results">
+              <%= render 'friendships/results_list' %>
+            </div>
           </div>
         <% end %>
       </div>

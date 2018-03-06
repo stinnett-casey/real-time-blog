@@ -1,0 +1,6 @@
+$('#search-results').html("<%= j render 'results_list', people: @users %>");
+tippy('.tippy', {
+  position: 'left',
+  interactive: true,
+  arrow: true
+});
