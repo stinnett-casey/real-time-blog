@@ -11,7 +11,7 @@
           <div class="form-row">
             <div class="md-form font-weight-light col-md-6 col-12">
                 <i class="fa fa-user-circle prefix grey-text"></i>
-                <%= f.text_field :first_name, class: 'form-control' %>
+                <%= f.text_field :first_name, class: 'form-control', autofocus: 'true' %>
                 <%= f.label :first_name %>
             </div>
             <div class="md-form font-weight-light col-md-6 col-12">
@@ -26,13 +26,35 @@
                 <%= f.label :email, 'Your Email' %>
             </div>
             <!-- Material input password -->
-            <div class="md-form font-weight-light col-12">
+            <div class="md-form font-weight-light col-12 position-relative password-section">
                 <i class="fa fa-lock prefix grey-text"></i>
                 <%= f.password_field :password, class: 'form-control', id: 'password' %>
                 <%= f.label :password, 'Your Password' %>
+                <% password_help = %(
+                <div class="container">
+                  <div class="row password-help">
+                    <h5 style="text-align:center;">Strong Password</h5>
+                    <hr>
+                    <section>
+                      <p>To make a strong password, use a pass phrase!</p>
+                      <p>Ex: I like chocolate chip cookies.</p>
+                    </section>
+                  </div>
+                </div>) %>
+                <i id="password-info" class="fa fa-user-secret position-absolute blue-text tippy" title="<%= render html: password_help %>"></i>
                 <% if @minimum_password_length %>
                   <em>(<%= @minimum_password_length %> characters minimum)</em>
                 <% end %>
+                <small id="password-suggestions" class="form-text text-muted text-danger w-75 m-auto"></small>
+                <div class="progress w-75 m-auto">
+                  <div id="password-strength-bar" class="progress-bar bg-success" role="progressbar" style="width: 0%"></div>
+                </div>
+                <div class="evaluation d-flex evaluation justify-content-around">
+                  <small id="weak-eval" class="text-muted">Weak</small>
+                  <small id="less-weak-eval" class="text-muted">Less Weak</small>
+                  <small id="strong-eval" class="text-muted">Stronger</small>
+                  <small id="strongest-eval" class="text-muted">It's over 9000!</small>
+                </div>
             </div>
             <div class="md-form font-weight-light col-12">
               <i class="fa fa-lock prefix grey-text"></i>

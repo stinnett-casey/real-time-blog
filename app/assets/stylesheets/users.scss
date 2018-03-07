@@ -1,3 +1,73 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.password-section {
+  .progress {
+    height: .7rem;
+    &.super-sayan{
+      animation: wiggle .2s ease infinite, burn .65s ease-in-out infinite alternate;
+    }
+  }
+
+  .tippy {
+    .text-center {
+      text-align: center;
+    }
+    max-width: 100px;
+  }
+}
+
+.evaluation {
+  small {
+    visibility: hidden;
+  }
+}
+
+i#password-info {
+    top: 12px;
+    right: 5px;
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(.3deg);}
+  25% {transform: rotate(-.3deg);}
+  50% {transform: rotate(.3deg);}
+  75% {transform: rotate(-.3deg);}
+  100% {transform: rotate(.3deg);}
+}
+
+@keyframes burn{
+  0% {
+      box-shadow: -0.1em 0 0.3em #fefcc9, 0.1em -0.1em 0.3em #feec85, -0.2em -0.2em 0.4em #ffae34, 0.2em -0.3em 0.3em #ec760c, -0.2em -0.4em 0.4em #cd4606, 0.1em -0.5em 0.7em #973716, 0.1em -0.7em 0.7em #451b0e;
+  }
+  45% {
+      box-shadow: 0.1em -0.2em 0.5em #fefcc9, 0.15em 0 0.4em #feec85, -0.1em -0.25em 0.5em #ffae34, 0.15em -0.45em 0.5em #ec760c, -0.1em -0.5em 0.6em #cd4606, 0 -0.8em 0.6em #973716, 0.2em -1em 0.8em #451b0e;
+  }
+  70% {
+      box-shadow: -0.1em 0 0.3em #fefcc9, 0.1em -0.1em 0.3em #feec85, -0.2em -0.2em 0.6em #ffae34, 0.2em -0.3em 0.4em #ec760c, -0.2em -0.4em 0.7em #cd4606, 0.1em -0.5em 0.7em #973716, 0.1em -0.7em 0.9em #451b0e;
+  }
+  100% {
+      box-shadow: -0.1em -0.2em 0.6em #fefcc9, -0.15em 0 0.6em #feec85, 0.1em -0.25em 0.6em #ffae34, -0.15em -0.45em 0.5em #ec760c, 0.1em -0.5em 0.6em #cd4606, 0 -0.8em 0.6em #973716, -0.2em -1em 0.8em #451b0e;
+  }
+}
+
+// @keyframes burn{
+//   0% {
+//     box-shadow: 0 0 20px #fefcc9,
+//     10px -10px 30px #feec85,
+//     -20px -20px 40px #ffae34,
+//     20px -40px 50px #ec760c,
+//     -20px -60px 60px #cd4606,
+//     0 -80px 70px #973716,
+//     10px -90px 80px #451b0e;
+//   }
+//   100% {
+//     box-shadow: 0 0 20px #fefcc9,
+//     10px -10px 30px #fefcc9,
+//     -20px -20px 40px #feec85,
+//     22px -42px 60px #ffae34,
+//     -22px -58px 50px #ec760c,
+//     0 -82px 80px #cd4606,
+//     10px -90px 80px  #973716;
+//   }
+// }
