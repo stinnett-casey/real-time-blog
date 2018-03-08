@@ -23,13 +23,13 @@
             <div class="md-form font-weight-light col-12">
                 <i class="fa fa-envelope prefix grey-text"></i>
                 <%= f.email_field :email, class: 'form-control', id: 'email' %>
-                <%= f.label :email, 'Your Email' %>
+                <%= f.label :email, 'Your Email', for: 'email' %>
             </div>
             <!-- Material input password -->
             <div class="md-form font-weight-light col-12 position-relative password-section">
                 <i class="fa fa-lock prefix grey-text"></i>
                 <%= f.password_field :password, class: 'form-control', id: 'password' %>
-                <%= f.label :password, 'Your Password' %>
+                <%= f.label :password, 'Your Password', for: 'password' %>
                 <% password_help = %(
                 <div class="container">
                   <div class="row password-help">
