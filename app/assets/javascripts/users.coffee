@@ -2,7 +2,10 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $(document).on 'turbolinks:load', ->
-  tippy('.tippy', {position: 'right'})
+  tippy('#password-info.tippy', {position: 'right'}) # tippy tooltip for password info
+  #########################
+  # Password Strength Bar #
+  #########################
   $(document).on 'keyup', '#password', ->
     eval_opts = ['weak', 'less-weak', 'less-weak', 'strong', 'strongest']
     password = $(this).val()
@@ -39,3 +42,7 @@ $(document).on 'turbolinks:load', ->
       $('#password-strength-bar').css('width', '0%')
       $('.evaluation small').css('visibility', 'hidden') # hide all
       $('.progress').removeClass 'super-sayan'
+
+App.room = App.cable.subscriptions.create "PostCommentNotificationsChannel",
+  received: (data) ->
+    $('#messages').append data['message']
