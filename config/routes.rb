@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # Serve websocket cable requests in-process
+  mount ActionCable.server => '/cable'
   post '/friendship_search', to: 'friendships#search', as: 'friendship_search'
   devise_for :users, controllers: {
     sessions: 'users/sessions',

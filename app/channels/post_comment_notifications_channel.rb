@@ -1,6 +1,6 @@
 class PostCommentNotificationsChannel < ApplicationCable::Channel
   def subscribed
-    stream_from "post_comment_notifications_channel"
+    stream_from "post_comment_notifications"
   end
 
   def unsubscribed

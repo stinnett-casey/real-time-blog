@@ -43,6 +43,6 @@ $(document).on 'turbolinks:load', ->
       $('.evaluation small').css('visibility', 'hidden') # hide all
       $('.progress').removeClass 'super-sayan'
 
-App.room = App.cable.subscriptions.create "PostCommentNotificationsChannel",
+App.messages = App.cable.subscriptions.create "PostCommentNotificationsChannel",
   received: (data) ->
-    $('#messages').append data['message']
+    $('#messages').append data.message

@@ -9,6 +9,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
     respond_to do |format|
       if @post.save
+        ActionCable.server.broadcast 'post_comment_notifications', message: @post.content
         format.html { redirect_to root_path }
         format.js
       else
